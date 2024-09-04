@@ -1,13 +1,17 @@
 body{
-    width: 100%;
     margin: 0;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
+/* all header- and menu stuff */
 header{
     width: 100%;
     border: 1px solid black;
     margin: 0 auto;
     height: 350px;
+    padding-bottom: 50px;
 }
 h1{
     text-align: center;
@@ -17,13 +21,16 @@ h1{
     margin: 0 auto;
     width: 100%;
 }
-#gossa{
+#portrait{
     float: left;
     
     width: 300px;
     z-index: -1;
     padding-left: 10vw;
 
+}
+.mobMenu{
+    display: none;
 }
 nav{
     padding-right: 10vw;
@@ -54,16 +61,22 @@ nav li a:hover{
     color: white;
     background-color: grey;
 }
+/* header end*/
 
 
-
-/*main card-like structures /grid layout*/
-
+/*main */
 main{
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
+    position:inherit;
+    margin: 20px auto;
+    width: 80%;
 }
+.projects, .experience{
+    height: 600px;
+    padding: 5%;
+    border: solid black 1px;
+    margin-top: 64px;
+}
+
 .gridWrapper{
     display: grid; 
     padding: 1rem;
@@ -81,7 +94,7 @@ article{
     width:80%;
     height: 80%;
 }
-article h2{
+article h3{
     font-size: 90%;
 }
 article p{
@@ -90,7 +103,7 @@ article p{
 article:hover{
     background-color:rgba(0, 0, 0, 0.064);
 }
-.artHeader h2{
+.artHeader h3{
     padding: 0;
     margin: 0;
     text-align: center;
@@ -121,38 +134,113 @@ footer{
 }
 
 /*Media-queries*/
-@media only screen and (max-width: 800px) {
 
+@media only screen and (max-width: 1600px) {
+    article img{
+        display: none;
+        
+    }
+}
+/*tablets and smaller screens*/
+@media only screen and (max-width: 1060px) {
+
+    header{
+        height: 400px;
+    }
+    
+    .gridWrapper{
+        margin: 0 auto;
+        padding: 0;
+    }
+    nav{
+        float: left;
+        padding-left: 18px;
+        
+    }
+    main{
+        margin-top:10%;
+        margin-bottom: 50%;
+        width: 80%;
+    }
+
+    article p{
+        position: relative;
+        left: 20%;
+        padding-bottom: 10px;
+    }
+
+    main img {
+        display: none;
+    }
+}
+/*most mobile phones*/
+@media only screen and (max-width: 600px) {
+
+    body{
+        margin: 0;
+    }
+
+    h1{
+        font-size: 1rem;
+    }
     .gridWrapper{
         display: grid; 
         grid-template-columns: repeat(1, 1fr);
         
     }
-
     nav{
-        top: 60%;
-        left: 6%;
-        padding-right: 10%;
-        background-color: rgba(128, 128, 128, 0.158);
+        padding-top: 50px;
+        padding-bottom: 0;
+        padding-left: 20px;
+        margin: 0;
     }
-    nav a{
-        background-color: white;
-        color: black;
+
+    nav ul{
+        padding: 0;
+
     }
-    #gossa{
+    nav ul li a{
+        padding: 2px;
+    }
+
+    #portrait{
         left: 30%;
-        width: 300px;
+        width: 400px;
         z-index: -1;
+        margin: 0;
+    }
+    .imgWrap{
+        margin: 0;
+        padding: 0;
     }
     main{
         margin-top:20%;
         margin-bottom: 50%;
-    }
-    article{
+        margin-inline: 0;
         width: 100%;
     }
+    .projects, .experience{
+        height: 1000px;
+        display:block;
+        position:relative;
+        padding: 0;
+        width: 100%;
+    }
+
+    article{
+
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+    article p{
+        position: relative;
+        left: 40%;
+        padding-bottom: 10px;
+    }
     .gridWrapper{
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
     }
 }

@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -12,6 +13,8 @@ header{
     margin: 0 auto;
     height: 350px;
     padding-bottom: 50px;
+    
+
 }
 h1{
     text-align: center;
@@ -71,35 +74,34 @@ main{
     width: 80%;
 }
 .projects, .experience{
-    height: 600px;
+    height: 800px;
     padding: 5%;
     border: solid black 1px;
     margin-top: 64px;
 }
 
 .gridWrapper{
-    display: grid; 
+    display: grid;  
     padding: 1rem;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1%;
 
 }
 article{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
     border: solid rgba(0, 0, 0, 0.235) 1px;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding-inline:5%;
     padding-top: 1%;
-    padding-bottom: 1%;
-    width:80%;
-    height: 80%;
+    padding-bottom: 5%;
 }
 article h3{
     font-size: 90%;
 }
-article p{
-    font-size: 80%;
-}
+
 article:hover{
     background-color:rgba(0, 0, 0, 0.064);
 }
@@ -110,23 +112,18 @@ article:hover{
     padding-bottom: 1%;
 }
 section{
-    
     margin: 0 auto;
 }
 article section p{
-    float: left;
     width: 130px;
 }
 .imgWrap{
+   align-self: center;
     
 }
 .artPics{
-    width: 10vw;
-    height: 10vw;
-    object-fit: contain;
-    float: right;
-
-
+    width: 140px;
+    height: 100px;
 }
 footer{
     text-align: center;
@@ -136,9 +133,9 @@ footer{
 /*Media-queries*/
 
 @media only screen and (max-width: 1600px) {
-    article img{
-        display: none;
-        
+
+    .gridWrapper{
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 /*tablets and smaller screens*/
@@ -149,8 +146,12 @@ footer{
     }
     
     .gridWrapper{
+        grid-template-columns: 1fr 1fr;
         margin: 0 auto;
         padding: 0;
+    }
+    .projects, .experience{
+        height: 1100px;
     }
     nav{
         float: left;
@@ -170,7 +171,7 @@ footer{
     }
 
     main img {
-        display: none;
+      
     }
 }
 /*most mobile phones*/
@@ -183,11 +184,7 @@ footer{
     h1{
         font-size: 1rem;
     }
-    .gridWrapper{
-        display: grid; 
-        grid-template-columns: repeat(1, 1fr);
-        
-    }
+
     nav{
         padding-top: 50px;
         padding-bottom: 0;
@@ -218,29 +215,21 @@ footer{
         margin-bottom: 50%;
         margin-inline: 0;
         width: 100%;
+
     }
     .projects, .experience{
-        height: 1000px;
-        display:block;
-        position:relative;
-        padding: 0;
-        width: 100%;
+        height: 2000px;
+
     }
 
     article{
-
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
         
     }
     article p{
-        position: relative;
-        left: 40%;
-        padding-bottom: 10px;
+
     }
     .gridWrapper{
-        margin: 0 auto;
-        padding: 0;
+        grid-template-columns: 1fr;
     }
+
 }

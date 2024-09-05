@@ -17,6 +17,7 @@ section{
     border: 1px solid rgb(25, 176, 129);
     margin: 1rem;
 }
+
 .boxes{
   display: grid;
   grid-area: 20vw 1fr ;

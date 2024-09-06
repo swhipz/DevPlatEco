@@ -13,9 +13,8 @@ header{
     margin: 0 auto;
     height: 350px;
     padding-bottom: 50px;
-    
-
 }
+
 h1{
     text-align: center;
     text-shadow: 3px 3px 3px rgba(128, 128, 128, 0.386);
@@ -26,18 +25,14 @@ h1{
 }
 #portrait{
     float: left;
-    
-    width: 300px;
+    height: 250px;
     z-index: -1;
-    padding-left: 10vw;
+    padding-left: 20vw;
 
-}
-.mobMenu{
-    display: none;
 }
 nav{
     padding-right: 10vw;
-    padding-top: 50px;
+    padding-top: 75px;
     float: right;
 }
 nav ul{
@@ -52,12 +47,12 @@ nav li a {
 
     color: black;
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
 }
 .active{
     border: solid rgba(0, 0, 0, 0.176) 1px;
-    background-color: greenyellow;
+    background-color: rgb(139, 138, 119);
     box-shadow: rgba(0, 0, 0, 0.24) 0px .1px 3px;
 }
 nav li a:hover{
@@ -83,9 +78,17 @@ main{
 .gridWrapper{
     display: grid;  
     padding: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3 , 1fr);
     grid-gap: 1%;
 
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
 }
 article{
     display:flex;
@@ -130,6 +133,10 @@ footer{
     padding-bottom: 3%;
 }
 
+
+
+
+
 /*Media-queries*/
 
 @media only screen and (max-width: 1600px) {
@@ -142,13 +149,11 @@ footer{
 @media only screen and (max-width: 1060px) {
 
     header{
-        height: 400px;
+        height: 450px;
     }
     
     .gridWrapper{
-        grid-template-columns: 1fr 1fr;
-        margin: 0 auto;
-        padding: 0;
+        grid-template-columns: repeat(2, 1fr);
     }
     .projects, .experience{
         height: 1100px;
@@ -177,9 +182,16 @@ footer{
 /*most mobile phones*/
 @media only screen and (max-width: 600px) {
 
-    body{
+    body, html{
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .gridWrapper{
+        grid-template-columns: 1fr;
+        padding: 0;
         margin: 0;
     }
+
 
     h1{
         font-size: 1rem;
@@ -188,26 +200,27 @@ footer{
     nav{
         padding-top: 50px;
         padding-bottom: 0;
-        padding-left: 20px;
+        padding-inline: 0;
         margin: 0;
+
     }
 
     nav ul{
-        padding: 0;
-
+        display: block;
+        padding-left: 0;
     }
     nav ul li a{
-        padding: 2px;
+        padding: 10px;
     }
 
     #portrait{
-        left: 30%;
-        width: 400px;
         z-index: -1;
         margin: 0;
+        padding-left: 15vw;
+        height: 400px;
     }
     .imgWrap{
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
     }
     main{
@@ -215,21 +228,23 @@ footer{
         margin-bottom: 50%;
         margin-inline: 0;
         width: 100%;
-
     }
+
     .projects, .experience{
         height: 2000px;
-
+        width: 100%;
+        padding: 0;
     }
 
     article{
-        
+       
     }
     article p{
 
     }
-    .gridWrapper{
-        grid-template-columns: 1fr;
+
+    footer{
+        width: 100%;
     }
 
 }

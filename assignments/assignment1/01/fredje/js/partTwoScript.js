@@ -1,9 +1,10 @@
 
 // - Get html-elements from css-ids
-const countryList = document.querySelector('#countryList');
+const countryHtmlList = document.querySelector('#countryList');
 const country = document.querySelector('#countryInputField');
 const addBtn = document.querySelector('#countryAdd');
-
+//s4
+const searchInput = document.querySelector('#searchBar');
 
 
 
@@ -13,7 +14,7 @@ const addCountryToList = (country) => {
     const listItem = document.createElement('li');
     listItem.textContent = country;
     //append to list
-    countryList.appendChild(listItem);
+    countryHtmlList.appendChild(listItem);
 
 
 //Step 2
@@ -45,7 +46,7 @@ addBtn.addEventListener('click', () => {
         addCountryToList(countryValue);
         country.value = '';
     } else {
-        alert('skriv inn et land a');
+        alert('Enter a country');
     }
 
 });
@@ -64,12 +65,33 @@ const listSearch = (list, searchWord) => {
 };
 
 
-//Step 4.. Integrating it and adding update search 
-//on new text-entry.
-const searchInput = document.querySelector("#searchBar");
-const search = (searchInput) => {
-    listSearch(countryList, country);
-    shortSearch()
+//Step 4.. Integrating search and adding update search on new text-entry.
+
+
+//define list
+let listOfCountries = [];
+
+//get input-field
+
+//listen for inputs to search-field?
+searchInput.addEventListener('input', () => {
+    //make all input lowercase to remove case-sensetive search issues
+    const searchWord = searchInput.value.toLowerCase();
+    const countryList = listOfCountries.filter(country => shortSearch(element.toLowercase(), searchWord.toLowerCase()));
+
+
+});
+
+// Function to update search 
+const updateSearchResults = (listOfCountries) => {
+    countryHtmlList.innerHTML = '';
+    listOfCountries.forEach(country => {
+        const listItem = document.createElement('li');
+        listItem.textContent = country;
+        console.log('added' + country);
+
+        countryHtmlList.appendChild(listItem);
+    })
 
 }
 

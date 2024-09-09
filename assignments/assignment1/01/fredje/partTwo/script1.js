@@ -100,13 +100,13 @@ searchInputField.addEventListener('input', () => {
             }else{
                 console.log('Searchbox empty?');
             }
-        // There's probably a better / smoother way to do this
-        // but it works fairly well. idk why it didnt work in the 'else' statement on 102
     } else{
         updateListDisplay(countriesList);
     }
     }
 );
+
+// optional parts of assignments not attempted
 
 
 

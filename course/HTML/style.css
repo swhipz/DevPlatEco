@@ -1,0 +1,127 @@
+* html body{
+    display: none;
+}
+body{
+    overflow-x: hidden;
+    background-color: #ffffff;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.gridWrap{
+    display: grid;
+    grid-template-rows: 1fr 3.5rem 350vh 100px;
+    grid-template-columns: 1;
+}
+h1{
+    font-size: 2rem;
+    text-align: center;
+
+}
+header{
+    grid-row: 1 / 2;
+    padding: .5rem;
+    background-color: #447ED3;
+    
+}
+nav{
+    grid-row: 2 / 3;
+    background-color: #1D4277;
+    padding: 1px;
+    width: 100%;
+    
+
+}
+nav ul{
+
+}
+nav li{
+    display: inline-block;
+
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    border-radius: 9%;
+    padding: 1.1rem;
+}
+nav a:hover{
+    color: black;
+    background-color: white;
+    
+}
+nav a.active{
+    background-color: #2A5DA8;
+    color: white;
+}
+nav a.active:hover{
+    background-color: #C77D00;
+    color: #FFC96D;
+}
+main{
+    grid-row: 3 / 4;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding-bottom: 2rem;
+}
+.recipe{
+
+}
+.recipe-photo{
+    border-radius: 10%;
+    /*
+    box-shadow: 1.5px 3px 10px rgba(0, 0, 0, 0.411);
+    */
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+
+}
+img{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10%;
+    
+}
+.tilt{  
+    padding: 0;
+    margin: 0;
+    border-radius: 10%;
+
+}
+.imgWrap{
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 10%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@media only screen and (min-width: 900px) {
+    .gridWrap{
+        grid-template-columns: 200px 1fr 200px;
+    }
+    header{
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+    }
+    nav{
+        grid-row: 2/3;
+        grid-column: 1/4;
+    }
+    main{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        padding-bottom: 20px;
+
+    }
+    footer{
+        grid-row: 4/5;
+        grid-column: 1/4;
+    }
+}

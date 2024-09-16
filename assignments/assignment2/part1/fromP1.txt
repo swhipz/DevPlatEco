@@ -1,0 +1,21 @@
+The first part of the assignment introduces and explains the API we will be using and then you will be tasked with querying this API.
+
+The second part of the assignment revolves around creating a React interface for the API. First you will present the data from the API in a table and then you will add interactive components like pagination, search and filtering.
+
+
+
+/** **/
+what is api?
+- makes one piece of sw talk to another ? tf does that mean
+
+REST API
+    - representational state transfer
+
+- basicly structured js-data, key-value pairs?
+    JSON
+KEY - variable name basicly
+
+
+
+
+

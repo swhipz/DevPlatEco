@@ -9,3 +9,4 @@ function kvadratroten(x){
 const splitter = (x) => {
     return x.split('');    
 }
+
